@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hacker Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .box {
+            border: 2px solid #00ff00;
+            padding: 40px;
+            box-shadow: 0 0 20px #00ff00;
+            text-align: center;
+            width: 300px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: black;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: black;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #00ff00;
+            color: black;
+        }
+
+        #message {
+            font-size: 35px;
+            text-shadow: 0 0 10px #00ff00;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box" id="loginBox">
+    <h2>ACCESS TERMINAL</h2>
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="login()">LOGIN</button>
+    <p id="error"></p>
+</div>
+
+<script>
+function login() {
+    var pass = document.getElementById("password").value;
+
+    if (pass === "sanjay") {
+        document.getElementById("loginBox").innerHTML =
+        "<div id='message'></div>";
+
+        var text = "Hello Sanjai 😎";
+        var i = 0;
+
+        function typeEffect() {
+            if (i < text.length) {
+                document.getElementById("message").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+
+        typeEffect();
+    } else {
+        document.getElementById("error").innerHTML = "ACCESS DENIED";
+    }
+}
+</script>
+
+</body>
+</html>
